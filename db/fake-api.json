@@ -1,0 +1,11 @@
+{
+  "produtos": [
+    {
+      "id": 123,
+      "código": 12,
+      "tipoProduto": "eletronico",
+      "valorNoFornecedor": 12.5,
+      "quantidadeEmEstoque": 15
+    }
+  ]
+}
