@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { v4 } from 'uuid';
 
-import { ApiService } from 'src/app/services/api.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 import { Produto } from './../../../models/Produto.model';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -23,7 +23,7 @@ export class ProdutoCreateComponent implements OnInit {
   }
 
   constructor(
-    private api: ApiService,
+    private api: ProdutoService,
     private utils: UtilsService,
     private router: Router
   ) { }

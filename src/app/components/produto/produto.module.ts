@@ -13,7 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { DialogModule } from '../dialog/dialog.module';
 
-import { ApiService } from 'src/app/services/api.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 import { UtilsService } from './../../services/utils.service';
 
 import { ProdutoComponent } from './produto.component';
@@ -62,7 +62,7 @@ import { ProdutoDeleteComponent } from './produto-delete/produto-delete.componen
   ],
   providers: [
     UtilsService,
-    ApiService
+    ProdutoService
   ],
   exports: [ProdutoComponent]
 })

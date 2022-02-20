@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ApiService } from 'src/app/services/api.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
 import { Produto } from './../../../models/Produto.model';
@@ -19,7 +19,7 @@ export class ProdutoDeleteComponent implements OnInit {
   produto!: Produto;
 
   constructor(
-    private api: ApiService,
+    private api: ProdutoService,
     private router: Router,
     private route: ActivatedRoute,
     private utils: UtilsService,

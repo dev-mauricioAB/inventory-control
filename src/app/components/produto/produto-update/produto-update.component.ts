@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApiService } from 'src/app/services/api.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
 import { Produto } from './../../../models/Produto.model';
@@ -16,7 +16,7 @@ export class ProdutoUpdateComponent implements OnInit {
   produto!: Produto;
 
   constructor(
-    private api: ApiService,
+    private api: ProdutoService,
     private utils: UtilsService,
     private router: Router,
     private route: ActivatedRoute
