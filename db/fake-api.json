@@ -1,11 +1,43 @@
 {
   "produtos": [
     {
-      "id": 123,
-      "código": 12,
+      "id": 1234,
+      "código": 1234,
       "tipoProduto": "eletronico",
       "valorNoFornecedor": 12.5,
-      "quantidadeEmEstoque": 15
+      "quantidadeEmEstoque": "11",
+      "descricao": "tre coisa legal"
+    },
+    {
+      "id": 1234,
+      "código": 1234,
+      "tipoProduto": "eletronico",
+      "valorNoFornecedor": 12.5,
+      "quantidadeEmEstoque": 15,
+      "descricao": "tre coisa"
+    },
+    {
+      "id": 1234,
+      "código": 1234,
+      "tipoProduto": "eletronico",
+      "valorNoFornecedor": 12.5,
+      "quantidadeEmEstoque": 15,
+      "descricao": "tre coisa"
+    },
+    {
+      "id": 1234,
+      "código": 1234,
+      "tipoProduto": "eletronico",
+      "valorNoFornecedor": 12.5,
+      "quantidadeEmEstoque": 15,
+      "descricao": "tre coisa"
+    },
+    {
+      "id": "2aba32ae-224a-4f84-bc9c-1b480f38eb36",
+      "descricao": "Coiso",
+      "tipoProduto": "movel",
+      "quantidadeEmEstoque": 0,
+      "valorNoFornecedor": "10"
     }
   ]
 }
