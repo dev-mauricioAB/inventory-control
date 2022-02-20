@@ -1,5 +1,16 @@
 table {
+  background-color: #696969;
   width: 100%;
+
+  th {
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 0;
+  }
+
+  td {
+    padding-left: 0;
+  }
 }
 
 .edit {
