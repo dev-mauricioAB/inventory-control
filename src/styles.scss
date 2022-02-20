@@ -137,19 +137,6 @@ button {
   }
 }
 
-.body-list-page mat-expansion-panel,
-.body-passing-houses mat-expansion-panel {
-  background-color: #3490c263;
-}
-
-.mat-expansion-panel-header-title,
-.mat-expansion-panel-header-description {
-  color: rgb(22, 19, 19);
-}
-
-.mat-expansion-panel-content {
-  .mat-expansion-panel-body {
-    color: rgb(22, 19, 19);
-    padding-top: 10px;
-  }
+.mat-card {
+  background-color: #696969;
 }
