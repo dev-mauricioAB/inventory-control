@@ -1,0 +1,19 @@
+<mat-sidenav-container class="sidevav-list-container">
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true">
+    <mat-nav-list>
+      <button mat-button [matMenuTriggerFor]="menu">Produtos</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/produtos">Listar todos</button>
+        <button mat-menu-item routerLink="/produtos/create">
+          Adicionar novo
+        </button>
+      </mat-menu>
+
+      <button mat-button routerLink="/movimentacao">Movimentação</button>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

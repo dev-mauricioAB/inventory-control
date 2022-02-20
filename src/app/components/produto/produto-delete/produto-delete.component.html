@@ -1,0 +1,42 @@
+<mat-card *ngIf="produto">
+  <mat-card-title>Excluir Produto</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Descição"
+        [value]="produto.descricao"
+        name="name"
+        disabled
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Preço (R$)"
+        [value]="produto.valorNoFornecedor"
+        name="price"
+        disabled
+      />
+    </mat-form-field>
+  </form>
+  <button
+    mat-raised-button
+    matTooltip="Excluí uma unidade do produto."
+    (click)="removerUmProduto()"
+    color="warn"
+  >
+    Excluir
+  </button>
+
+  <button
+    mat-raised-button
+    matTooltip="Remove o produto do estoque, tornando-o indisponível.!"
+    (click)="removerProdutoDoEstoque()"
+    color="warn"
+  >
+    Excluir Permanentemente
+  </button>
+
+  <button mat-raised-button (click)="cancel()">Cancelar</button>
+</mat-card>

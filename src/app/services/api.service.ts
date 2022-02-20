@@ -1,6 +1,7 @@
+import { UtilsService } from './utils.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable, EMPTY } from 'rxjs';
 
 import { Produto } from './../models/Produto.model';
 import { environment } from 'src/environments/environment';
@@ -12,26 +13,54 @@ export class ApiService {
   private apiUrl = environment.apiAdress;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private utils: UtilsService
   ) { }
 
-  getProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.apiUrl + 'produtos');
+
+  create(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(this.apiUrl + '/produtos', produto).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
-  getProduto(produtoCodigo: number): Observable<Produto> {
-    return this.http.get<Produto>(this.apiUrl + `produtos/${produtoCodigo}`);
+  getAllProdutos(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.apiUrl + '/produtos').pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
-  editProduct(produto: Produto): Observable<Produto> {
-    return this.http.patch<Produto>(this.apiUrl + `produtos/${produto.codigo}`, produto);
+  getProduto(id: string): Observable<Produto> {
+    const url = `${this.apiUrl}/produtos/${id}`;
+
+    return this.http.get<Produto>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
-  addProduct(produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>(this.apiUrl + `produtos/${produto.codigo}`, produto);
+  update(produto: Produto): Observable<Produto> {
+    const url = `${this.apiUrl}/produtos/${produto.id}`;
+
+    return this.http.put<Produto>(url, produto).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
-  deleteProduto(produtoCodigo: number): Observable<Produto> {
-    return this.http.delete<Produto>(this.apiUrl + `produtos/${produtoCodigo}`);
+  delete(id: string): Observable<Produto> {
+    const url = `${this.apiUrl}/produtos/${id}`;
+
+    return this.http.delete<Produto>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.utils.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
   }
 }
