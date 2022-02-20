@@ -4,9 +4,28 @@
     <mat-form-field>
       <input
         matInput
-        placeholder="Nome"
+        placeholder="Descrição"
         [(ngModel)]="produto.descricao"
-        name="name"
+        name="descricao"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de Produto</mat-label>
+      <mat-select [(ngModel)]="produto.tipoProduto" name="tipoProduto">
+        <mat-option
+          *ngFor="let tipoProduto of tiposProduto"
+          [value]="tipoProduto"
+        >
+          {{ tipoProduto.toLocaleUpperCase() }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Quantidade em estoque"
+        [(ngModel)]="produto.quantidadeEmEstoque"
+        name="quantidadeEmEstoque"
       />
     </mat-form-field>
     <mat-form-field>
@@ -14,7 +33,7 @@
         matInput
         placeholder="Preço (R$)"
         [(ngModel)]="produto.valorNoFornecedor"
-        name="price"
+        name="valorNoFornecedor"
       />
     </mat-form-field>
   </form>

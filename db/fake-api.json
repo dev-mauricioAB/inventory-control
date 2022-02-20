@@ -6,6 +6,13 @@
       "tipoProduto": "movel",
       "quantidadeEmEstoque": 2,
       "valorNoFornecedor": "10"
+    },
+    {
+      "id": "7ec1c1d6-8830-4dc4-b85f-132146fc8b79",
+      "descricao": "Televisão",
+      "tipoProduto": "eletronico",
+      "quantidadeEmEstoque": 100,
+      "valorNoFornecedor": "10"
     }
   ],
   "movimentacoes": []

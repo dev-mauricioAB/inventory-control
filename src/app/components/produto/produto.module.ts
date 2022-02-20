@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 import { DialogModule } from '../dialog/dialog.module';
 
@@ -58,7 +59,8 @@ import { ProdutoDeleteComponent } from './produto-delete/produto-delete.componen
     MatSnackBarModule,
     MatTooltipModule,
     DialogModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     UtilsService,

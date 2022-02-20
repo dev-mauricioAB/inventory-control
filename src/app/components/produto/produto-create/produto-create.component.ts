@@ -22,6 +22,12 @@ export class ProdutoCreateComponent implements OnInit {
     valorNoFornecedor: 0
   }
 
+  tiposProduto = [
+    'eletronico',
+    'eltrodomestico',
+    'movel'
+  ]
+
   constructor(
     private api: ProdutoService,
     private utils: UtilsService,
@@ -33,6 +39,10 @@ export class ProdutoCreateComponent implements OnInit {
   }
 
   createProduct(): void {
+    if (typeof this.produto.quantidadeEmEstoque === 'string')
+      this.produto.quantidadeEmEstoque = parseInt(this.produto.quantidadeEmEstoque)
+
+
     this.api.create(this.produto).subscribe(() => {
       this.utils.showMessage('Produto criado!')
       this.router.navigate(['/produtos'])

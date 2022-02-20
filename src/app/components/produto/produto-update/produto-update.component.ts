@@ -29,6 +29,9 @@ export class ProdutoUpdateComponent implements OnInit {
   }
 
   updateProduct(): void {
+    if (typeof this.produto.quantidadeEmEstoque === 'string')
+      this.produto.quantidadeEmEstoque = parseInt(this.produto.quantidadeEmEstoque)
+
     this.api.update(this.produto).subscribe(() => {
       this.utils.showMessage("Produto atualizado com sucesso!");
       this.router.navigate(["/produtos"]);

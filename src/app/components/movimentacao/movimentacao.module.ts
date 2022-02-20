@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 
+
 import { MovimentacaoService } from 'src/app/services/movimentacao.service';
 import { ProdutoService } from './../../services/produto.service';
 import { UtilsService } from 'src/app/services/utils.service';
