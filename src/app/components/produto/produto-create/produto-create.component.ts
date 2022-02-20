@@ -37,7 +37,6 @@ export class ProdutoCreateComponent implements OnInit {
       this.utils.showMessage('Produto criado!')
       this.router.navigate(['/produtos'])
     })
-
   }
 
   cancel(): void {
